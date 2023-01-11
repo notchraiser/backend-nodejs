@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample API</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h2>Sample Users API Working!</h2>
+    <section>
+      <p>GET /users</p>
+      <blockquote>show all users in db</blockquote>
+      <p>
+        response json<div>
+        [{"_id":"63a1d297fdef0cbed532bab3","username":"harry","roles":["employee"],"active":true,"__v":1},{"_id":"63a2902a57e9d4369b634d0e","username":"tom","roles":["clerk","admin"],"active":false,"__v":1},{"_id":"63a292c457e9d4369b634d1e","username":"paul","roles":["employee"],"active":true,"__v":0}]
+    </div></p>
+    </section>
+    <section>
+      <p>POST /users</p>
+      <blockquote>create a new user in db</blockquote>
+      <div>
+        request json { "username": "paul", "password": "p!2022aul", "roles":
+        ["employee"] }
+        </div>
+      <div>response json {"message":"New user paul created"}</div>
+    </section>
+    <section>
+      <p>PATCH /users</p>
+      <blockquote>update existing user in db</blockquote>
+      <div> request json
+        {
+            "id": "63a292c457e9d4369b634d1e",
+            "username": "paul mayar",
+            "password": "p!2022aul2",
+            "roles": [
+                "employee"
+            ],
+            "active": false
+        }
+        </div>
+      <div>response json {"message":"paul mayar updated"}</div>
+    </section>
+    <section>
+      <p>DELETE /users</p>
+      <blockquote>delete existing user in db</blockquote>
+      <div> request json
+        {
+            "id": "63a292c457e9d4369b634d1e"
+        }
+        </div>
+      <div>response json "Username paul mayar with ID 63a292c457e9d4369b634d1e deleted"</div>
+    </section>
+  </body>
+</html>
